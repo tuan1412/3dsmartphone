@@ -1,0 +1,169 @@
+:root {
+    --phone-width: 220px;
+    --phone-height: 400px;
+    --phone-deep: 15px;
+    --phone-deep-nag: -15px;
+    --phone-height-lr: 355px;
+    --phone-mg-lr: 25px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.master {
+    width: var(--phone-width);
+    height: var(--phone-height);
+    position: relative;
+    perspective: 1000px;
+    cursor: grab;
+}
+
+.whole {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    margin: auto;
+    transform-origin: 50% center;
+    transform: rotateY(180deg);
+    transition: all 1s linear;
+}
+
+.test {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+.test div {
+    margin: 0;
+    display: block;
+    position: absolute;
+    border-radius: 9%;
+}
+
+.test .topp {
+    background: #111;
+    height: var(--phone-deep);
+    width: 81%;
+    margin-left: 10% !important;
+    transform-style: preserve-3d;
+    transform-origin: center 0;
+    transform: rotateX(-90deg) translate3d(0, var(--phone-deep-nag), -0px);
+}
+
+.test .front {
+    background: #111;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg) translate3d(0, 0, -0px);
+}
+
+.front .innerFront {
+    width: 98% !important;
+    height: 98% !important;
+    transform-style: preserve-3d;
+    background: #888;
+    transform: translateX(1%) translateY(1%);
+    box-shadow: 0px 0px 3px 1px rgba(20, 20, 20, 0.5), 0px 2px 3px 2px rgba(20, 20, 20, 0.5) inset;
+}
+
+.innerFront .face {
+    height: 75%;
+    width: 90%;
+    border-radius: 0px !important;
+    background: #444;
+    transform: translateY(17.5%) translateX(5%);
+}
+
+.homescreen {
+    border-radius: 0px !important;
+    width: 100% !important;
+    height: 0% !important;
+    transform-style: preserve-3d;
+    box-shadow: 1px 1px 3px 1px rgba(255, 255, 255, 0.2) inset;
+}
+
+.innerFront .innerInnerFront {
+    width: 98%;
+    height: 99%;
+    background-color: #111;
+    transform: translateX(1%) translateY(.5%);
+}
+
+
+.test .l-side {
+    background-color: #111;
+    height: var(--phone-height-lr);
+    width: var(--phone-deep);
+    margin-top: var(--phone-mg-lr);
+    left: 2px;
+    transform: rotateY(-90deg);
+    transform-origin: left;
+}
+
+.test .r-side {
+    background-color: #111;
+    height: var(--phone-height-lr);
+    width: var(--phone-deep);
+    margin-top: var(--phone-mg-lr);
+    right: 2px;
+    transform-style: preserve-3d;
+    transform: rotateY(90deg);
+    transform-origin: right;
+}
+
+.test .back {
+    background-color: #111;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(180deg) translate3d(0, 0, var(--phone-deep-nag));
+}
+
+.bottom {
+    background: #111;
+    height: var(--phone-deep) !important;
+    width: 82% !important;
+    top: var(--phone-height);
+    margin-left: 10% !important;
+    transform-style: preserve-3d;
+    transform-origin: center 0;
+    transform: rotateX(90deg);
+}
+
+.button-groups {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 12%;
+    left: 27%;
+    border: 1px solid #cecece;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 20px;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
